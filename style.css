@@ -1,0 +1,1108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #ffffff;
+}
+
+/* --- Navbar Styling --- */
+/* ini Bagian Navbar */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(52, 73, 94, 0.7); /* #34495E dengan transparansi 70% */
+    padding: 15px 20px;
+    backdrop-filter: blur(8px);
+    transition: background 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Saat di-scroll, navbar lebih gelap dan sedikit lebih transparan */
+.nav.scrolled {
+    background: rgba(52, 73, 94, 0.9); /* Lebih pekat saat scroll */
+    backdrop-filter: blur(12px);
+}
+
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-item img {
+    width: 100px; 
+    height: auto;
+}
+
+/* --- Nav Menu Styling --- */
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    display: inline-block;
+}
+
+.nav-menu a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.nav-menu a:hover {
+    background-color: aqua;
+    color: black;
+    border-radius: 5px;
+}
+
+/* Menu aktif */
+.nav-menu a.active {
+    background-color: #04AA6D; /* Warna hijau saat aktif */
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Burger Menu Styling */
+.icon {
+    display: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 14px;
+}
+
+/* --- Responsive Design --- */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(51, 51, 51, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px;
+    }
+
+    .nav-menu.responsive {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .icon {
+        display: block;
+    }
+}
+
+
+
+/* navbarrr selesaiiii */
+
+/* section gambar 1 */
+
+.section_1 {
+    background: url('Screenshot 2024-10-08 at 12.34.17.png') no-repeat center center/cover;
+    position: relative;
+    padding-bottom: 100px;
+    min-height: 100vh; /* Agar section penuh sesuai tinggi layar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Pastikan teks terlihat jelas */
+}
+
+/* Efek smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Gaya untuk section bawah agar lebih menarik */
+.section_2 {
+    padding: 100px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+/* Efek parallax saat scrolling */
+.section_1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Overlay untuk meningkatkan kontras */
+    z-index: 1;
+}
+
+.section_1 * {
+    position: relative;
+    z-index: 2; /* Supaya konten di atas overlay */
+}
+/* sinopsis */
+
+/* --- Section Sinopsis --- */
+.sinopsis {
+    position: relative;
+    padding: 5rem 2%; /* Lebih fleksibel */
+    padding-top: 5rem;
+    max-width: 60rem;
+    margin: auto;
+    text-align: center;
+    transform: translateY(50px);
+    transition: transform 0.8s ease-out;
+    will-change: transform, opacity; /* Optimasi performa */
+}
+
+/* Saat ditampilkan */
+.sinopsis.show {
+    transform: translateY(0);
+}
+
+/* Animasi hilang perlahan saat keluar dari viewport */
+.sinopsis.hide {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+.sinopsis h1 {
+    font-size: 2rem;
+    color: #333;
+    position: absolute;
+    top: 60px; /* Atur posisi dari atas */
+    left: -50px; /* Atur posisi dari kiri */
+    margin: 0;
+    text-align: left; /* Pastikan teks rata kiri */
+}
+
+/* Mengatur tombol agar berada di bawah h1 */
+.sinopsis_button {
+    position: absolute;
+    top: 60px; /* Beri jarak dari h1 */
+    left: 100px;
+    background-color: #2C3E50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.sinopsis_button:hover {
+    background-color: #2a84de;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.sinopsis p {
+    margin-top: 4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem; 
+    max-width: 100%; 
+    line-height: 1.5; 
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+}
+
+.ngeling {
+    width: 400%; 
+    margin: 0 auto;
+    padding-bottom: 1.5rem;
+    position: relative;
+}
+
+.ngeling::after {
+    content: "";
+    display: block;
+    width: 100%; /* Garis mengikuti lebar */
+    height: 3px; /* Sedikit lebih tebal */
+    background-color: #fc0505;
+    margin-top: 12px;
+}
+
+/* --- Animasi Sinopsis --- */
+/* .sinopsis {
+    animation: sin_animasi;
+    animation-timeline: view(100% auto);
+} */
+/* 
+@keyframes sin_animasi {
+    from {
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+} */
+
+/* --- Responsive Sinopsis --- */
+@media screen and (max-width: 900px) {
+    .sinopsis {
+        text-align: left;
+    }
+
+    .sinopsis h1,
+    .sinopsis_button {
+        text-align: left;
+        margin-left: 16%;
+    }
+
+    .ngeling::after {
+        width: 90%;
+    }
+}
+
+/* section Sinopsiis sudah selesaiii */
+
+
+
+/* section Tombol GUIDE */
+
+.section_tombol_studiguide {
+    position: relative;
+    padding: 5rem 5%; /* Lebih fleksibel */
+    max-width: 60rem;
+    margin: auto;
+    text-align: center;
+    transform: translateY(50px);
+    transition: transform 0.8s ease-out;
+    will-change: transform, opacity; 
+}
+
+.section_tombol_studiguide h1 {
+    font-size: 2rem;
+    color: #333;
+    position: absolute;
+    top: 60px; /* Atur posisi dari atas */
+    left: -50px; /* Atur posisi dari kiri */
+    margin: 0;
+    text-align: left; /* Pastikan teks rata kiri */
+}
+
+/* Mengatur tombol agar berada di bawah h1 */
+.guide_button {
+    position: absolute;
+    top: 60px; /* Beri jarak dari h1 */
+    left: 150px;
+    background-color: #2C3E50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.guide_button:hover {
+    background-color: #2a84de;
+}
+
+/* respponsif StudiGUide */
+
+@media screen and (max-width: 900px) {
+    .section_tombol_studiguide {
+        text-align: left;
+    }
+
+    .section_tombol_studiguide h1,
+    .guide_button {
+        text-align: left;
+        margin-left: 16%;
+    }
+}
+
+/* section 4 */
+
+.section_4 {
+    background: url('Screenshot 2024-10-08 at 12.32.58.png') no-repeat center center/cover;
+    position: relative;
+    padding-bottom: 100px;
+    min-height: 100vh; /* Agar section penuh sesuai tinggi layar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Pastikan teks terlihat jelas */
+}
+
+
+
+/* Section Teaserr */
+/* video */
+.video-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Kontainer Video */
+.video-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Jarak antar video */
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+/* Styling untuk Video */
+.video-item {
+    width: 30%; 
+    max-width: 320px;
+    aspect-ratio: 9 / 16;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pastikan iframe penuh dalam kontainer */
+.video-item iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover; /* Pastikan video tidak memiliki border hitam */
+}
+
+/* Efek Hover Dramatis */
+.video-item iframe:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-item {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+
+
+/* Subject */
+
+
+.Subject {
+    background-color: #ECF0F1;
+    padding: 50px 20px; /* Tambah padding atas dan bawah */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Kontainer utama */
+.subject-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px; 
+    margin-top: 20px; 
+}
+
+/* Setiap item */
+.image-item {
+    width: 22%;
+    max-width: 200px;
+    text-align: center;
+}
+
+/* Styling gambar */
+/* Styling gambar tetap bulat */
+.image-item img {
+    width: 150px; /* Lebar tetap */
+    height: 150px; /* Tinggi sama dengan lebar */
+    aspect-ratio: 1/1; /* Menjaga proporsi lingkaran */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+    border-radius: 50%; /* Membuatnya bulat */
+    /* border: 4px solid #34495E; */
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+
+/* Responsif untuk layar lebih kecil */
+@media screen and (max-width: 768px) {
+    .image-item {
+        width: 45%; /* Gambar lebih besar untuk tablet */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .image-item {
+        width: 90%;
+    }
+}
+
+/* Cegah tumpang tindih dengan memberikan margin bottom lebih besar */
+.image-item h3{
+    margin-bottom: 3px;
+    margin-top: 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+}
+.image-item p {
+    margin-bottom: 3px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* section Gambr 3 */
+
+.section_gambar_3{
+    background: url('Screenshot 2024-10-08 at 12.31.04.png') no-repeat center center/cover;
+    position: relative;
+    padding-bottom: 100px;
+    min-height: 100vh; /* Agar section penuh sesuai tinggi layar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; 
+}
+
+/* section gambar 4 */
+.section_gambar_4{
+    background: url('Screenshot 2024-10-08 at 12.31.04.png') no-repeat center center/cover;
+    position: relative;
+    padding-bottom: 100px;
+    min-height: 100vh; /* Agar section penuh sesuai tinggi layar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; 
+}
+/* WANYO */
+/* Untuk 4 gambar (default) */
+.subject-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Untuk 2 gambar - tetap memiliki ukuran yang sama */
+.subject-container.two-images {
+    justify-content: center; /* Posisikan ke tengah */
+    flex-wrap: wrap;
+    gap: 50px; /* Beri jarak lebih besar antar gambar */
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+
+/* Gambar tetap bulat dan ukuran sama */
+.image-item {
+    width: 22%;
+    max-width: 200px;
+    text-align: center;
+}
+
+.image-item img {
+    width: 150px;
+    height: 150px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    /* border: 4px solid #34495E; */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Responsif untuk layar lebih kecil */
+@media screen and (max-width: 768px) {
+    .image-item {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .image-item {
+        width: 90%;
+    }
+}
+
+/* Cegah tumpang tindih */
+.image-item h3,
+.image-item p {
+    margin-bottom: 10px;
+}
+
+
+/* section Archive */
+
+.archive {
+    display: grid;
+    gap: 20px;
+    padding: 60px;
+    align-items: start; /* Menyelaraskan elemen di atas */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom */
+    grid-template-rows: repeat(3, auto); /* Membuat 3 baris */
+    height:auto;
+    margin-bottom: 80px;
+    /* padding-top: 170px; */
+    /* padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0; */
+}
+
+.archive-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    overflow: visible;
+    border-radius: 8px;
+    height: auto;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Tambahkan ini untuk memastikan konten dapat membungkus */
+}
+
+.archive-item .description {
+    overflow: visible;
+    white-space: normal;
+}
+
+.archive-item .title, 
+.archive-item .subtitle {
+    color: #444;
+    text-align: left;
+}
+
+
+.archive-item .title {
+    font-size: 18px;
+    font-weight: bold;
+}
+.archive-item .subtitle {
+    font-size: 12px;
+    color: #666;
+}
+
+.archive-item .description {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.2;
+    color: #333;
+    text-align: left;
+    overflow: visible;
+    overflow: visible; /* Teks tidak akan terpotong */
+
+}
+
+.archive-image {
+    width: 100%; /* Lebar gambar mengikuti ukuran kolom */
+    height: 200px; /* Menetapkan tinggi gambar agar konsisten */
+    object-fit: cover; /* Memastikan gambar menutupi area dan dipotong jika perlu */
+    border-radius: 8px; /* Sudut membulat */
+    margin-bottom: 15px; /* Jarak antara gambar dan teks */
+    object-position: top;
+    transition: transform 0.3s ease; /* Tambahkan transisi untuk efek halus */
+}
+
+.archive-image:hover {
+    transform: scale(1.05); /* Membesarkan gambar sedikit ketika disentuh */
+}
+
+/* Responsif: Ubah menjadi 2 kolom di tablet */
+@media (max-width: 1024px) {
+    .archive {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk layar menengah */
+    }
+}
+
+/* Responsif: Ubah menjadi 1 kolom di ponsel */
+@media (max-width: 768px) {
+    .archive {
+        grid-template-columns: 1fr; /* 1 kolom untuk layar kecil */
+    }
+}
+
+.archive_panjang {
+    display: grid;
+    gap: 20px;
+    padding: 60px;
+    align-items: start;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk layar besar */
+    height: auto;
+    margin-top: -110px;
+}
+
+/* Responsif: Ubah menjadi 1 kolom di tablet & HP */
+@media (max-width: 1024px) { /* Tablet */
+    .archive_panjang {
+        grid-template-columns: 1fr; /* 1 kolom */
+        margin-top: -70px;
+    }
+}
+
+@media (max-width: 768px) { /* HP */
+    .archive_panjang {
+        padding: 40px; /* Kurangi padding agar lebih pas */
+        margin-top: -70;
+    }
+}
+
+
+.archive_akhir {
+    display: grid;
+    gap: 20px;
+    padding: 60px;
+    align-items: start; /* Menyelaraskan elemen ke atas */
+    grid-template-columns: 1fr; /* Selalu satu kolom */
+    height: auto;
+    margin-top: -96px;
+}
+
+/* Styling untuk item dalam archive_akhir */
+.archive_akhir-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    overflow: visible;
+    border-radius: 8px;
+    height: auto;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Pastikan konten dapat membungkus */
+}
+
+/* Gaya untuk gambar */
+.archive_akhir-image {
+    width: 100%;
+    height: 200px; /* Tetapkan tinggi gambar agar konsisten */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px; /* Beri jarak antara gambar dan teks */
+    object-position: top;
+    transition: transform 0.3s ease;
+}
+
+.archive_akhir-image:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+/* Styling teks */
+.archive_akhir-item .title, 
+.archive_akhir-item .subtitle {
+    color: #444;
+    text-align: left;
+}
+
+.archive_akhir-item .title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.archive_akhir-item .subtitle {
+    font-size: 12px;
+    color: #666;
+}
+
+.archive_akhir-item .description {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.2;
+    color: #333;
+    text-align: left;
+    overflow: visible;
+    white-space: normal;
+}
+
+.archive_akhir-item .description2 {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.2;
+    color: #333;
+    text-align: left;
+    overflow: visible;
+    white-space: normal;
+    font-style: italic;
+}
+
+/* Responsif: Sesuaikan padding untuk layar kecil */
+@media (max-width: 900px) {
+    .archive_akhir {
+        padding: 40px; /* Kurangi padding agar lebih pas */
+        margin-top: -60px;
+    }
+
+    .archive_akhir-item .title {
+        font-size: 16px;
+    }
+
+    .archive_akhir-item .subtitle {
+        font-size: 12px;
+    }
+
+    .archive_akhir-item .description {
+        font-size: 14px;
+    }
+}
+
+
+/* styleingg pdfff */
+
+
+
+.archive_pdf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 60px;
+    text-align: center;
+    margin-top: -90px;
+}
+
+.archive_pdf-item {
+    background: #f9f9f9; /* Warna latar belakang */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+    width: 100%;
+    max-width: 800px; /* Batasi lebar agar tidak terlalu besar */
+    overflow: hidden;
+}
+
+.archive_pdf embed {
+    width: 100%;
+    height: 600px;
+    border-radius: 8px;
+    border: 1px solid #ccc; /* Tambahkan garis tepi */
+}
+
+/* Styling untuk judul */
+.title_pjg {
+    font-size: 22px;
+    font-weight: bold;
+    color: #444;
+    margin-top: 15px;
+}
+
+/* Responsif: Ubah ukuran PDF di layar kecil */
+@media (max-width: 1024px) { /* Tablet */
+    .archive_pdf {
+        padding: 40px;
+    }
+    
+    .archive_pdf-item {
+        padding: 15px;
+    }
+
+    .archive_pdf embed {
+        height: 500px;
+    }
+    
+    .title_pjg {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) { /* HP */
+    .archive_pdf {
+        padding: 20px;
+    }
+
+    .archive_pdf embed {
+        height: 400px;
+    }
+
+    .title_pjg {
+        font-size: 18px;
+    }
+}
+
+
+
+/* Styling untuk section RUTEEEEE */
+.rute_peniwen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 60px;
+    text-align: center;
+}
+
+/* Styling untuk judul */
+.subject {
+    font-size: 24px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Styling untuk item */
+.archive_rute-item {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.archive-image-page10 {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer; /* Tambahkan pointer untuk efek klik */
+    transition: transform 0.3s ease;
+}
+
+.archive-image-page10:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+/* Styling untuk teks deskripsi */
+.descriptionrute {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Modal styling */
+.modal-page10 {
+    display: none; /* Modal tetap tersembunyi sampai dipicu */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Konten modal */
+.modal-content-page10 {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Tombol Close */
+.close-page10 {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.close-page10:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsif: Ubah padding di layar kecil */
+@media (max-width: 768px) {
+    .rute_peniwen {
+        padding: 40px;
+    }
+
+    .subject {
+        font-size: 20px;
+    }
+
+    .descriptionrute {
+        font-size: 14px;
+    }
+
+    .modal-content-page10 {
+        max-width: 95%;
+        max-height: 85%;
+    }
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Footer Section */
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+.footer-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f39c12;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* Quick Links */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #f39c12;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+/* Social Media Icons */
+.footer-section.social ul {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-section.social ul li {
+    display: inline;
+}
+
+.footer-section.social a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #f39c12;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-section.social a:hover {
+    transform: translateY(-3px);
+    color: #fff;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    background: #111;
+    margin-top: 20px;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+
+    .footer-section.social ul {
+        justify-content: center;
+    }
+}
+
+
+
+/* ini style untuk gambar pas di klik */
+
+/* Modal Styling */
+.image-modal {
+    display: none; /* Tetap tersembunyi saat halaman dimuat */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+/* Tombol Close */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
